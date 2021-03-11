@@ -40,12 +40,12 @@ $(document).ready(function ()
 	// Function to parse the libgen url and display the download button
 	function parse(url)
 	{
-		final_url = url.replace("book/index.php", "http://libgen.io/ads.php").trim();
+		final_url = url.replace("book/index.php", "http://libgen.is/ads.php").trim();
 		console.log("Dedicated to my lovely bookworm - CS")
 		$.get(final_url, function (finalData)
 		{
 			furl = $($.parseHTML(finalData)).find("td:contains('DOWNLOAD') > a").attr("href");
-			furl = "http://libgen.io/get.php?" + furl.split("?")[1];
+			furl = "http://libgen.is/get.php?" + furl.split("?")[1];
 			$('#i13a').attr('href', furl);
 			$('#i13a').show();
 			$('.preloader-wrapper').hide();
